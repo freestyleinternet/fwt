@@ -4,21 +4,25 @@ body {
 	font-size:100%;
 	font-weight:400;
 	background:#000;
+	@include bp(tablet) { 
+		font-size:95%;
+	}
+	@include bp(desktop) { 
+		font-size:100%;
+	}
 }
-
 a,
 a:visited {
 	color: $linkColor;
+	text-decoration:none;
 }
 a:hover {
 	color: $linkHoverColor;
 }
-
 ::-moz-selection {
     background: $selectionColor;
     text-shadow: none;
 }
-
 ::selection {
     background: $selectionColor;
     text-shadow: none;
@@ -35,6 +39,12 @@ font-size:em(100)
 h2 { }
 h3 { }
 h4.widgettitle { }
+
+ul {
+	list-style-type:none;
+	padding:0;
+	margin:0;
+}
 
 /* STRUCTURE */
 .wrapper {
@@ -55,10 +65,16 @@ header {
 
 .banner {
 	min-height:370px;
-	background:#0060a7;
+	background: #044a7e; /* Old browsers */
+	background: -moz-linear-gradient(top,  #044a7e 0%, #0564aa 38%, #0564aa 50%, #0564aa 61%, #044a7e 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#044a7e), color-stop(38%,#0564aa), color-stop(50%,#0564aa), color-stop(61%,#0564aa), color-stop(100%,#044a7e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #044a7e 0%,#0564aa 38%,#0564aa 50%,#0564aa 61%,#044a7e 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #044a7e 0%,#0564aa 38%,#0564aa 50%,#0564aa 61%,#044a7e 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #044a7e 0%,#0564aa 38%,#0564aa 50%,#0564aa 61%,#044a7e 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #044a7e 0%,#0564aa 38%,#0564aa 50%,#0564aa 61%,#044a7e 100%); /* W3C */
 }
 
-.main {
+main {
 	min-height:870px;
 	background:#e5e5e5;
 }

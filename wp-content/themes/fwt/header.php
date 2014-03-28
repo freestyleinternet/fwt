@@ -19,9 +19,14 @@
     <div class="mobileContainer"> 
         <div id="slidingMenu">
             <div id="slidingMenuContent">
-                <ul class="mobilemenu">
-                	<li style="color:#fff;">dfsdf</li>
-                </ul>
+				<?php
+					wp_nav_menu(
+						array(
+						'menu'		  => 'main-menu',
+						'container'       => '',
+						'menu_class'	=> 'mobilemenu'
+					));
+                ?>
             </div>
     	</div>
     
@@ -29,24 +34,52 @@
    		<header>
     		<div class="wrapper clearfix">
     			<a href="javascript:void(0);" class="show-menu-button">Menu</a>
-				<?php
-					wp_nav_menu(
-						array(
-						'menu'		  => 'main-menu',
-						'container'       => ''
-					));
-                ?>
+                <a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/images/fwt-logo.svg" alt="FWT"/></a>
+					<?php
+                        wp_nav_menu(
+                            array(
+                            'menu'		  => 'main-menu',
+                            'container'       => '',
+							'menu_class'	=> 'mainmenu'
+                        ));
+                    ?>
     		</div>
     	</header>
     	<div class="banner" role="banner">
     		<div class="wrapper"> 
-    			<p>Banner</p>
+    			<div class="testimonails">
+    <div class=center>
+        <span id=prev></span>
+        <span id=next></span>
+    </div>
+    <div class="cycle-slideshow testimonials-slider" 
+        data-cycle-fx=scrollHorz
+        data-cycle-swipe=true
+         data-cycle-slides="div.slide"
+         data-cycle-prev="#prev"
+         data-cycle-next="#next">
+        
+        <div class="slide">
+            <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.png">
+            <div class="text">
+                <p>banner</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.png">
+            <div class="text">
+                <p>banner</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
     		</div>
     	</div>
     
     	<div class="pageContent">
-    		<div class="main" role="main">
+    		<main role="main">
     			<div class="wrapper">
     				<p>Main content</p> 
     			</div>
-    		</div>
+    		</main>
