@@ -1,0 +1,75 @@
+/* GENERAL */
+body {
+	font-family: 'Karla', sans-serif;
+	font-size:100%;
+	font-weight:400;
+	background:#000;
+}
+
+a,
+a:visited {
+	color: $linkColor;
+}
+a:hover {
+	color: $linkHoverColor;
+}
+
+::-moz-selection {
+    background: $selectionColor;
+    text-shadow: none;
+}
+
+::selection {
+    background: $selectionColor;
+    text-shadow: none;
+}
+
+/* HEADINGS / TYPOGRAPHY */
+h1, h2, h3, h4 {
+	font-weight: normal;
+	margin: 0 0 10px 0;
+}
+h1 {
+font-size:em(100)
+}
+h2 { }
+h3 { }
+h4.widgettitle { }
+
+/* STRUCTURE */
+.wrapper {
+	width:92%;
+	margin:0 auto;
+	@include microclearfix;
+	@include bp(tablet) {
+		width:96%;
+	}
+	@include bp(desktop) {
+		width:960px;
+	}
+}
+
+header {
+	background:#fff;
+}
+
+.banner {
+	min-height:370px;
+	background:#0060a7;
+}
+
+.main {
+	min-height:870px;
+	background:#e5e5e5;
+}
+
+
+
+/****************************************
+PAGE TEMPLATES
+*****************************************/
+/* Home Page */
+.home { }
+
+/* Blog Page */
+.blog { }

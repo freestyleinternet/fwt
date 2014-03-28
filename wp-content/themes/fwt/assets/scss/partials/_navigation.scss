@@ -1,0 +1,76 @@
+/*  Mobile menu */
+#page { 
+	position: relative; 
+	left: 0; 
+	top:0px; 
+	/*z-index: 99999; */
+}
+.pageContent {  
+	height: 100%; 
+	z-index: 9999; 
+}
+.mobileContainer { 
+	width:100%;
+	overflow: hidden;	
+}
+#slidingMenu { 
+	display: block; 
+	position: absolute;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	width:100%;
+	left: 0px; 
+	top: 0px; 
+	z-index: 0;
+	visibility: hidden;	/* to block user interaction on wp7 (z-index wont work) */
+ }
+ .show-menu-button {
+	position:absolute; 
+	display: block; 
+	float: left; 
+	width: 24px; 
+	height: 22px; 
+	margin-top: 12px; 
+	margin-left: 11px;
+	z-index:300;
+	@include bp(tablet) {
+		display:none;
+	}
+}
+#slidingMenu {
+	width:100%;
+	overflow-x: hidden;
+	overflow-y: hidden; 
+}
+#slidingMenu ul.mobilemenu {
+	list-style: none;
+	height: 100%;
+	padding:em(25) 10%;  
+	overflow-x: hidden;
+	overflow-y: scroll; 
+}
+#slidingMenu ul.mobilemenu li { 
+	display: block; 	
+}
+.menu-icon { 
+	vertical-align: middle;
+	margin-right: 6px;
+	border:none; /* wp7 display a border on image link*/
+}
+#slidingMenu ul.mobilemenu li a { 
+	position: relative; 
+	display: block; 
+	margin-left: 5%; 
+	margin-right:5%;
+	color: #fff;
+	padding-top:em(16);
+	padding-bottom:em(16);
+	font-size:em(16);
+	font-weight:400;
+	line-height:22px;
+	text-decoration: none; 
+}
+#slidingMenu ul li a:hover { 
+	color: #999eac; 
+	text-decoration: none; 
+}
