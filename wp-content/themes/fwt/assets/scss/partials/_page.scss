@@ -205,7 +205,11 @@ footer {
 .img-list {
 	li {
 		display:inline-block;	
-		margin-left:em(6);
+		margin-right:em(6);
+		@include bp(tablet) {
+			margin-left:em(6);
+			margin-right:0;
+		}
 	}
 }
 

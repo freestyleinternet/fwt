@@ -50,7 +50,7 @@
 #slidingMenu ul.mobilemenu {
 	list-style: none;
 	height: 100%;
-	padding:em(25) 10%;  
+	padding:em(25) 2% em(25) 2%;  
 	overflow-x: hidden;
 	overflow-y: scroll; 
 }
@@ -67,17 +67,25 @@
 	display: block; 
 	margin-left: 5%; 
 	margin-right:5%;
-	color: #fff;
-	padding-top:em(16);
-	padding-bottom:em(16);
-	font-size:em(16);
+	color:$brand-second;
+	font-size:em(14);
 	font-weight:400;
+	padding-top:em(9);
+	padding-bottom:em(9);
 	line-height:22px;
-	text-decoration: none; 
+	text-decoration: none;
+	text-transform:none; 
 }
 #slidingMenu ul li a:hover { 
 	color: #999eac; 
 	text-decoration: none; 
+}
+
+#slidingMenu ul.mobilemenu li ul  li a {
+	font-size:em(12);
+	font-weight:400;
+	padding:em(3) em(20);
+	
 }
 
 /* Desktop menu */
