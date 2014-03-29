@@ -33,49 +33,54 @@
     <div id="page">
    		<header>
     		<div class="wrapper clearfix">
-    			<a href="javascript:void(0);" class="show-menu-button">Menu</a>
-                <a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/images/fwt-logo.svg" alt="FWT"/></a>
-					<?php
-                        wp_nav_menu(
-                            array(
-                            'menu'		  => 'main-menu',
-                            'container'       => '',
-							'menu_class'	=> 'mainmenu'
-                        ));
-                    ?>
+                <div class="contact">
+                	<h1>Leading experts in transport information and mapping</h1>
+                    <p>Call: <span>0208 345 1234</span></p>
+                    <a class="yellowimg" href="index.php">E-NEWS SIGN UP</a>
+                </div>
+                <a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/images/fwt-logo.svg" alt="FWT"/></a>
+				<?php
+                    wp_nav_menu(
+                        array(
+                        'menu'		  => 'main-menu',
+                        'container'       => '',
+                        'menu_class'	=> 'mainmenu'
+                    ));
+                ?>
     		</div>
     	</header>
-    	<div class="banner" role="banner">
-    		<div class="wrapper"> 
-    			<div class="testimonails">
-    <div class=center>
-        <span id=prev></span>
-        <span id=next></span>
-    </div>
-    <div class="cycle-slideshow testimonials-slider" 
-        data-cycle-fx=scrollHorz
-        data-cycle-swipe=true
-         data-cycle-slides="div.slide"
-         data-cycle-prev="#prev"
-         data-cycle-next="#next">
+        <a href="javascript:void(0);" class="show-menu-button">Menu</a>
         
-        <div class="slide">
-            <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.png">
-            <div class="text">
-                <p>banner</p>
+        <div class="banner" role="banner">
+            <div class="wrapper"> 
+                <div class="slider-container">
+                    <div class=center>
+                        <span id=prev rel="prev"></span>
+                        <span id=next rel="next"></span>
+                    </div>
+                    <div class="cycle-slideshow" 
+                        data-cycle-fx=scrollHorz
+                        data-cycle-swipe=true
+                        data-cycle-slides="div.slide"
+                        data-cycle-prev="#prev"
+                        data-cycle-next="#next">
+                        <div class="cycle-pager"></div>
+                        <div class="slide">
+                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
+                            <div class="text">
+                                <p>banner</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
+                            <div class="text">
+                                <p>banner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="slide">
-            <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.png">
-            <div class="text">
-                <p>banner</p>
-            </div>
-        </div>
-        
-    </div>
-</div>
-    		</div>
-    	</div>
     
     	<div class="pageContent">
     		<main role="main">

@@ -1,5 +1,6 @@
 (function($) {
 
+	// Mobile page slide menu
 	var viewport;
 	var page;
 	var pageContent;

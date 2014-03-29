@@ -1,5 +1,6 @@
 /* GENERAL */
 body {
+	color:$body-copy;
 	font-family: 'Karla', sans-serif;
 	font-size:100%;
 	font-weight:400;
@@ -31,15 +32,18 @@ a:hover {
 /* HEADINGS / TYPOGRAPHY */
 h1, h2, h3, h4 {
 	font-weight: normal;
-	margin: 0 0 10px 0;
+	margin:0;
 }
 h1 {
-font-size:em(100)
+
 }
 h2 { }
 h3 { }
 h4.widgettitle { }
 
+p {
+	margin:0;
+}
 ul {
 	list-style-type:none;
 	padding:0;
@@ -59,12 +63,67 @@ ul {
 	}
 }
 
+.yellowimg {
+	width:100%;
+	display:inline-block;
+	color:#000;
+	font-weight:700;
+	font-size:em(14);
+	padding:em(9) em(50) em(9) em(12);
+	background:$brand-second;
+	background:$brand-second url(#{$assetPath}/button-envelope-icon.svg) no-repeat 91% center;
+	&:hover {
+		color:#000;
+	}
+	@include bp(tablet) { 
+		width:auto;
+	}
+}
+
 header {
+	min-height:128px;
 	background:#fff;
+	@include bp(tablet) { 
+		min-height:182px;
+	}
+}
+.logo {
+	width:10%;
+	@include bp(tablet) { 
+		width:auto;
+	}
+}
+.contact {
+	float:right;
+	width:60%;
+	text-align:right;
+	margin-top:em(12);
+	@include bp(tablet) { 
+		width:55%;
+		
+	}
+	h1 {
+		font-size:em(12);
+		font-weight:700;
+		@include bp(tablet) { 
+			font-size:em(15);
+		}
+	}
+	p {
+		font-weight:700;
+		font-size:em(14);
+		margin-bottom:em(8);
+		span {
+			color:$brand-dark;
+		}
+		@include bp(tablet) { 
+			font-size:em(24);
+		}
+	}
+	
 }
 
 .banner {
-	min-height:370px;
 	background: #044a7e; /* Old browsers */
 	background: -moz-linear-gradient(top,  #044a7e 0%, #0564aa 38%, #0564aa 50%, #0564aa 61%, #044a7e 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#044a7e), color-stop(38%,#0564aa), color-stop(50%,#0564aa), color-stop(61%,#0564aa), color-stop(100%,#044a7e)); /* Chrome,Safari4+ */

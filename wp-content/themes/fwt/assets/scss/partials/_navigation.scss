@@ -25,14 +25,17 @@
 	visibility: hidden;	
  }
  .show-menu-button {
-	position:absolute; 
-	display: block; 
-	float: left; 
-	width: 24px; 
-	height: 22px; 
-	margin-top: 12px; 
-	margin-left: 11px;
+	width:100%;
+	min-height:30px;
+	display:inline-block; 
+	color:#fff;
+	padding:em(9) 0;
+	text-indent:em(12);
+	background:#000;
 	z-index:300;
+	&:hover, &:target {
+		color:#fff;
+	}
 	@include bp(tablet) {
 		display:none;
 	}
@@ -81,14 +84,15 @@
 	top:4px;
 	width:100%;
 	display: inline-block;
-	margin-top:em(30);
+	margin-top:em(14);
+	display:none;
 	visibility: hidden;
 	z-index:3000;
-	@include bp(tablet) { 
+	@include bp(tablet) {
+		display:block; 
 		visibility: visible;
 	}
 	@include bp(desktop) {
-		
 		float:left; 
 		width:auto;
 	}
@@ -114,7 +118,7 @@
 		color: #000;
 		padding:em(9) 6% em(20) 6%;
 		@include bp(desktop) { 
-			padding:em(9) em(12) em(20) em(12);
+			padding:em(9) em(12) em(9) em(12);
 		}
 	}
 	ul li a {
@@ -124,6 +128,10 @@
 		padding-left:em(30);
 	}
 }
+.mainmenu li.menu-item-has-children a {
+	padding:em(9) em(12) em(22) em(12);
+}
+
 .mainmenu li ul {
 	padding: 0;
 	position: absolute;
@@ -141,8 +149,9 @@
 	-ms-transition: opacity 0.2s;
 	-o-transition: opacity 0.2s;
 	-transition: opacity 0.2s;
+	background:#f00;
 	@include bp(desktop) { 
-		top: 48px;
+		top: 50px;
 	}
 }
 .mainmenu li ul li { 
