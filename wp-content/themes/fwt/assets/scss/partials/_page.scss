@@ -71,7 +71,13 @@ ul {
 	font-size:em(14);
 	padding:em(9) em(50) em(9) em(12);
 	background:$brand-second;
-	background:$brand-second url(#{$assetPath}/button-envelope-icon.svg) no-repeat 91% center;
+	&.envelope {
+		background:$brand-second url(#{$assetPath}/button-envelope-icon.svg) no-repeat 91% center;
+	}
+	&.arrow {
+		font-size:em(16);
+		background:$brand-second url(#{$assetPath}/black-button-arrow.svg) no-repeat 91% center;
+	}
 	&:hover {
 		color:#000;
 	}
@@ -124,6 +130,7 @@ header {
 }
 
 .banner {
+	padding:em(20) 0;
 	background: #044a7e; /* Old browsers */
 	background: -moz-linear-gradient(top,  #044a7e 0%, #0564aa 38%, #0564aa 50%, #0564aa 61%, #044a7e 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#044a7e), color-stop(38%,#0564aa), color-stop(50%,#0564aa), color-stop(61%,#0564aa), color-stop(100%,#044a7e)); /* Chrome,Safari4+ */
@@ -131,6 +138,9 @@ header {
 	background: -o-linear-gradient(top,  #044a7e 0%,#0564aa 38%,#0564aa 50%,#0564aa 61%,#044a7e 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top,  #044a7e 0%,#0564aa 38%,#0564aa 50%,#0564aa 61%,#044a7e 100%); /* IE10+ */
 	background: linear-gradient(to bottom,  #044a7e 0%,#0564aa 38%,#0564aa 50%,#0564aa 61%,#044a7e 100%); /* W3C */
+	@include bp(tablet) {
+		padding:0;
+	}
 }
 
 main {

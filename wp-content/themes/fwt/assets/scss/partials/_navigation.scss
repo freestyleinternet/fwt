@@ -32,6 +32,8 @@
 	padding:em(9) 0;
 	text-indent:em(12);
 	background:#000;
+	border-top:5px solid #fff;
+	border-bottom:25px solid #fff;
 	z-index:300;
 	&:hover, &:target {
 		color:#fff;
@@ -106,7 +108,7 @@
 		display:block;
 		font-weight:700;
 		white-space: nowrap;
-		padding:em(9) 6% em(24) 6%;
+		padding:em(9) 5% em(24) 5%;
 		@include bp(desktop) { 
 			padding:em(9) em(12) em(24) em(12);
 		}

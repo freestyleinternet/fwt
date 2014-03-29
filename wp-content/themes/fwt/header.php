@@ -36,7 +36,7 @@
                 <div class="contact">
                 	<h1>Leading experts in transport information and mapping</h1>
                     <p>Call: <span>0208 345 1234</span></p>
-                    <a class="yellowimg" href="index.php">E-NEWS SIGN UP</a>
+                    <a class="yellowimg envelope" href="index.php">E-NEWS SIGN UP</a>
                 </div>
                 <a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/images/fwt-logo.svg" alt="FWT"/></a>
 				<?php
@@ -68,13 +68,36 @@
                         <div class="slide">
                             <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
                             <div class="text">
-                                <p>banner</p>
+                                <h1>LEADING THE WAY IN THE WORLD OF WAYFINDING UK.</h1>
+                                <a class="yellowimg arrow" href="index.php">READ MORE</a>
                             </div>
                         </div>
                         <div class="slide">
                             <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
                             <div class="text">
-                                <p>banner</p>
+                                <h1>LEADING THE WAY IN THE WORLD OF WAYFINDING UK.</h1>
+                                <a class="yellowimg arrow" href="index.php">READ MORE</a>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
+                            <div class="text">
+                                <h1>LEADING THE WAY IN THE WORLD OF WAYFINDING UK.</h1>
+                                <a class="yellowimg arrow" href="index.php">READ MORE</a>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
+                            <div class="text">
+                                <h1>LEADING THE WAY IN THE WORLD OF WAYFINDING UK.</h1>
+                                <a class="yellowimg arrow" href="index.php">READ MORE</a>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
+                            <div class="text">
+                                <h1>LEADING THE WAY IN THE WORLD OF WAYFINDING UK.</h1>
+                                <a class="yellowimg arrow" href="index.php">READ MORE</a>
                             </div>
                         </div>
                     </div>
@@ -83,8 +106,4 @@
         </div>
     
     	<div class="pageContent">
-    		<main role="main">
-    			<div class="wrapper">
-    				<p>Main content</p> 
-    			</div>
-    		</main>
+    		
