@@ -2,7 +2,43 @@
 
 	<main role="main">
           <div class="wrapper">
-              <p>Main content</p> 
+              
+              <div class="col">
+              	<a href="#">
+                	<p>fghfg</p>
+                </a>
+              </div> 
+              
+              <div class="col">
+              	<a href="#">
+                	<p>fghfg</p>
+                </a>
+              </div> 
+              
+              <div class="col">
+              	<a href="#">
+                	<p>fghfg</p>
+                </a>
+              </div> 
+              
+              <div class="col">
+              	<a href="#">
+                	<p>fghfg</p>
+                </a>
+              </div> 
+              
+              <div class="col">
+              	<a href="#">
+                	<p>fghfg</p>
+                </a>
+              </div> 
+              
+              <div class="col">
+              	<a href="#">
+                	<p>fghfg</p>
+                </a>
+              </div>               
+
           </div>
       </main>
 	
