@@ -1,6 +1,27 @@
 /* FORMS */
+label {
+	color:#fff;
+	display:block;
+	font-size:em(14);
+	margin-bottom:em(2);
+}
+input {
+	width:100%;
+	display:block;
+	font-size:em(14);
+	padding:em(3) em(5);
+	border-radius:em(10);
+	border:1px solid #000;
+	margin-bottom:em(5);
+}
 
-form { }
+input[type=submit] {
+	padding-top:em(3);
+	padding-bottom:em(3);
+	border-radius:0;
+	border:none;
+	margin-top:em(9);
+}
 
 /* Gravity Forms */
 

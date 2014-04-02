@@ -18,7 +18,6 @@
 
 <!-- Social Network Sharing Buttons -->
 <div class="sharing">
-	<h4>Share This</h4>
 	<ul class="clearfix">
 		<li class="share-twitter">
 			<div class="twitter_button">

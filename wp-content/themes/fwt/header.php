@@ -1,3 +1,15 @@
+<?php
+    $page_slug = '';
+	if (is_page())
+	{
+		$page_slug = 'page-'.basename(get_permalink());
+		
+		if ($post->post_parent)
+		{
+			$page_slug.= ' parent-'.basename(get_permalink($post->post_parent));
+		}
+	}
+?>
 <!DOCTYPE html>
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
@@ -8,10 +20,51 @@
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/favicon.ico">
 	<link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/apple-touch-icon.png">
     <link href='http://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript">
+		function initialize() {
+		  var myLatlng = new google.maps.LatLng(51.57851,-0.14963);
+		  var mapOptions = {
+			zoom: 15,
+			center: myLatlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		  }
+		
+		  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+		
+		  var contentString = 
+		  	  '<div id="content">'+
+			  	  '<h1>Aztec House</h1>'+
+				  '<div id="bodyContent">'+
+					  '<ul>'+
+					  	'<li>397-405 Archway Road</li>' +
+						'<li>Highgate</li>' +
+						'<li>London N6 4EY</li>' +
+					  '</ul>' +
+				  '</div>'+
+			  '</div>';
+		
+		  var infowindow = new google.maps.InfoWindow({
+			  content: contentString,
+			  maxWidth: 250
+		  });
+		
+		  var marker = new google.maps.Marker({
+			  position: myLatlng,
+			  map: map,
+			  title: 'Cauldron'
+		  });
+		  google.maps.event.addListener(marker, 'click', function() {
+			infowindow.open(map,marker);
+		  });
+		}
+		
+		google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class($page_slug); ?>>
 	<!--[if lt IE 8]>
 	    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 	<![endif]-->
@@ -51,59 +104,4 @@
     	</header>
         <a href="javascript:void(0);" class="show-menu-button">Menu</a>
         
-        <div class="banner" role="banner">
-            <div class="wrapper"> 
-                <div class="slider-container">
-                    <div class=center>
-                        <span id=prev rel="prev"></span>
-                        <span id=next rel="next"></span>
-                    </div>
-                    <div class="cycle-slideshow" 
-                        data-cycle-fx=scrollHorz
-                        data-cycle-swipe=true
-                        data-cycle-slides="div.slide"
-                        data-cycle-prev="#prev"
-                        data-cycle-next="#next">
-                        <div class="cycle-pager"></div>
-                        <div class="slide">
-                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
-                            <div class="text">
-                                <h1>LEADING THE WAY IN THE WORLD OF WAYFINDING UK.</h1>
-                                <a class="yellowimg arrow" href="index.php">READ MORE</a>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
-                            <div class="text">
-                                <h1>LEADING THE WAY IN THE WORLD OF WAYFINDING UK.</h1>
-                                <a class="yellowimg arrow" href="index.php">READ MORE</a>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
-                            <div class="text">
-                                <h1>LEADING THE WAY IN THE WORLD OF WAYFINDING UK.</h1>
-                                <a class="yellowimg arrow" href="index.php">READ MORE</a>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
-                            <div class="text">
-                                <h1>LEADING THE WAY IN THE WORLD OF WAYFINDING UK.</h1>
-                                <a class="yellowimg arrow" href="index.php">READ MORE</a>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
-                            <div class="text">
-                                <h1>LEADING THE WAY IN THE WORLD OF WAYFINDING UK.</h1>
-                                <a class="yellowimg arrow" href="index.php">READ MORE</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    	<div class="pageContent">
-    		
+       

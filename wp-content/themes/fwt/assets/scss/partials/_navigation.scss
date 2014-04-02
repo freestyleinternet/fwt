@@ -99,12 +99,14 @@
 	visibility: hidden;
 	z-index:3000;
 	@include bp(tablet) {
+		top:16px;
 		display:block; 
 		visibility: visible;
 	}
 	@include bp(desktop) {
 		float:left; 
 		width:auto;
+		top:4px;
 	}
 }
 .mainmenu li {
@@ -118,17 +120,22 @@
 		white-space: nowrap;
 		padding:em(9) 5% em(24) 5%;
 		@include bp(desktop) { 
-			padding:em(9) em(12) em(24) em(12);
+			padding:em(9) em(17) em(24) em(17);
 		}
 	}
 }
-.mainmenu li:hover {
+.mainmenu > li:last-child {
+	/*position: relative;
+	right:-1px;*/
+}
+.mainmenu li:hover,
+.mainmenu li.current_page_item {
 	background:$brand-second;
 	a {
 		color: #000;
-		padding:em(9) 6% em(20) 6%;
+		padding:em(9) 5% em(20) 5%;
 		@include bp(desktop) { 
-			padding:em(9) em(12) em(9) em(12);
+			padding:em(9) em(17) em(9) em(17);
 		}
 	}
 	ul li a {
@@ -139,7 +146,7 @@
 	}
 }
 .mainmenu li.menu-item-has-children a {
-	padding:em(9) em(12) em(22) em(12);
+	padding:em(9) em(17) em(22) em(17);
 }
 
 .mainmenu li ul {
@@ -159,10 +166,11 @@
 	-ms-transition: opacity 0.2s;
 	-o-transition: opacity 0.2s;
 	-transition: opacity 0.2s;
-	background:#f00;
+	
 	@include bp(desktop) { 
 		top: 50px;
 	}
+	
 }
 .mainmenu li ul li { 
 	display: block; 

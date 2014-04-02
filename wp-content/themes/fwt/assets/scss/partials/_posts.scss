@@ -1,9 +1,63 @@
-/* POSTS */
+/* Other websites */
+.bottomblock {
+	padding:em(14) 0;
+	margin-top:em(23);
+	border-top:1px solid $brand-dark;
+	h1 {
+		color:#000;
+		font-size:em(18);
+		font-weight:700;
+		margin-bottom:em(15);
+	}
+	article { 
+		display:inline-block;
+		margin-bottom:em(19);
+		img {
+			float:left;
+			margin-top:em(4);
+			width:30%;
+			margin-right:5%; 
+			@include bp(tablet) { 
+				width:11.29032258064516%; /*  70 / 620 */
+				margin-right:1.93548387096774%; /*  12 / 620 */
+			}
+		}
+		p, span {
+			float:right;
+			width:65%;
+			font-size:em(14);
+			line-height:20px;
+			margin:0;
+			@include bp(tablet) { 
+				width:86.7741935483871%;  /*  538 / 620 */
+			}
+		}
+	}
+}
 
-article { clear: both; margin: 0 0 35px 0; }
-
-blockquote { background: url(assets/images/icons/blockquote.png) no-repeat 0 12px; padding: 10px 20px 10px 50px; font-style: italic; }
-blockquote p { }
+main blockquote { 
+	float:right;
+	width:100%;
+	margin:em(5) 0 0 em(30);
+	@include bp(tablet) { 
+		width:35.48387096774194%;  /*  220/620*/
+	}
+}
+main blockquote {
+	p {
+		color:#000;
+		font-weight:700;
+		font-size:em(14);
+		margin-top:em(8);
+		margin-bottom:0;
+	}
+	p.quote { 
+		color:$brand-dark;
+		font-size:em(18);
+		font-weight:400;
+		font-style:italic;
+	}
+}
 
 ul, ol { }
 
@@ -27,10 +81,14 @@ img.wp-smiley { padding: 0; border: none; }
 .wp-caption-text { }
 .gallery-caption { }
 
-.alignleft { float: left; width: auto; margin: 5px 15px 15px 0; }
-.alignright { float: right; width: auto; margin: 5px 0 15px 15px; }
+.alignleft { float: left; width: auto; margin: 6px 15px 15px 0; }
+.alignright { float: right; width: auto; margin: 6px 0 15px 15px; }
 .aligncenter { text-align: center; margin-bottom: 5px;}
 img.aligncenter { margin-left: auto; margin-right: auto; display: block; }
+.borderbox {
+	background:#fff;
+	border:5px solid #fff;
+}
 
 pre { }
 code, tt { }
