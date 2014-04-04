@@ -186,13 +186,14 @@ header {
 	p {
 		font-weight:700;
 		font-size:em(14);
-		margin-bottom:em(8);
+		margin-bottom:em(14);
 		margin-top:0;
 		span {
 			color:$brand-dark;
 		}
 		@include bp(tablet) { 
 			font-size:em(24);
+			margin-bottom:em(8);
 		}
 		
 	}
@@ -211,6 +212,17 @@ header {
 	@include bp(tablet) {
 		padding:0;
 	}
+	@include bp(desktop) {
+		height:376px;
+	}
+}
+
+.banner.fullwidth {
+	padding:em(7) 0 0 0;
+	@include bp(desktop) {
+		height:376px;
+		padding:0;
+	}
 }
 
 main {
@@ -218,15 +230,29 @@ main {
 	background:#e5e5e5;
 	h1 {
 		color:$brand-dark;
-		font-size:em(28);
+		font-size:em(23);
+		line-height:29px;
 		font-weight:700;
-		margin-bottom:em(2);
+		margin-top:em(12);
+		margin-bottom:em(12);
+		@include bp(tablet) {
+			font-size:em(28);
+			line-height:34px;
+			margin-top:0;
+			margin-bottom:em(2);
+		}
 	}
 	h2 {
 		color:#000;
 		font-size:em(18);
 		font-weight:700;
 		margin-bottom:em(6);
+		@include bp(tablet) {
+			font-size:em(16);
+		}
+		@include bp(desktop) {
+			font-size:em(18);
+		}
 	}
 	h3 {
 		color:#000;
@@ -281,6 +307,7 @@ main section.single-style-2 {
 }
 
 section {
+	box-sizing:inherit;
 	float:left;
 	width:100%;
 	@include bp(tablet) {
@@ -292,8 +319,10 @@ section {
 aside {
 	float:left;
 	width:100%;
+	margin-top:em(20);
 	@include bp(tablet) {
 		width:31.25%;  /*  300 / 960 */
+		margin-top:0;
 	}
 }
 
@@ -328,6 +357,12 @@ main .homeblock {
 	min-height:em(190);
 	background:#fff;
 	z-index:10;
+	@include bp(tablet) {
+		min-height:em(220);
+	}
+	@include bp(desktop) {
+		min-height:em(190);
+	}
 	img {
 		float:right;
 	}
@@ -346,9 +381,12 @@ main .homeblock {
 		position: relative;
 		width:62%; /*  172/307 */
 		color:$body-copy;
-		font-size:em(18);
+		font-size:em(16);
 		font-weight:700;
 		z-index:10;
+		@include bp(desktop) {
+			font-size:em(18);
+		}
 	}
 	p {
 		position: relative;
@@ -393,7 +431,14 @@ main .homeblock.update {
 	}
 }
 main .homeblock.contactblock {
-	background:$brand-dark url(#{$assetPath}/contact-us-map-block.jpg) no-repeat top left;
+	position:relative;
+	background: url(#{$assetPath}/contact-us-map-block.jpg) no-repeat top left;
+	@include bp(tablet) {
+		background: url(#{$assetPath}/contact-us-map-block-tablet.jpg) no-repeat top right;
+	}
+	@include bp(desktop) {
+		background: url(#{$assetPath}/contact-us-map-block.jpg) no-repeat top left;
+	}
 	h2, p {
 		color:$brand-second;
 	}
@@ -401,6 +446,14 @@ main .homeblock.contactblock {
 		position:absolute;
 		bottom:em(14);
 		width:auto;
+	}
+}
+@include bp(desktop) {
+	main .homeblock.contactblock a {
+		float:left;
+		width:100%;
+		min-height:161px;
+		display:block;
 	}
 }
 
@@ -414,7 +467,8 @@ aside .homeblock {
 }
 
 .caption {
-	display:block;
+	float:left;
+	width:100%;
 	font-size:em(12);
 	line-height:14px;
 	padding:em(2) em(10);
@@ -483,13 +537,17 @@ aside .homeblock {
 	position:relative; 
 	width:100%;
 	display:inline-block;
-	margin-bottom:em(8);
+	margin-bottom:em(20);
+	@include bp(tablet) {
+		margin-bottom:em(8);
+	}
 	h1 {
 		font-size:em(18);
 		line-height:24px;
 		font-weight:700;
 		color:$brand-dark;
 		margin-bottom:em(3);
+		margin-top:0;
 	}
 	h2 {
 		font-size:em(12);
@@ -517,13 +575,22 @@ aside .homeblock {
 	h2 {
 		color:$brand-second;
 	}
+	&.contactform {
+		margin-top:em(44);
+		@include bp(desktop) {
+			margin-top:em(47);
+		}
+	}
 }
 
 .linkedinlogo {
-	float:right;
+	float:left;
 	width:84px;
 	height:20px;
 	background:url(#{$assetPath}/linkedin-logo.png) no-repeat top left;
+	@include bp(tablet) {
+		float:right;
+	}
 }
 
 /* Contact page */
@@ -647,6 +714,7 @@ footer {
 			margin-bottom:em(10);
 		}
 		@include bp(desktop) { 
+			display:inline-block;
 		}
 	}
 }

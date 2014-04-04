@@ -13,17 +13,17 @@
                 <aside>
                 	<?php get_template_part( 'templates/partials/inc-socialbuttons'); ?>
                 	
-                    <div class="homeblock update">
-                        <a href="#">
-                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/no-right-of-way.jpg">
+                     <div class="homeblock update">
+                        <a href="<?php bloginfo('url'); ?>/news/">
+                            <img src="<?php the_field('fwt_update_featured_image', 19); ?>">
                             <h2>FWT UPDATE</h2>
-                            <p>FWT win the contract to supply all street  Centro Transport Executive that is running so the text limit is running here to two lines  read more...</p>
+                            <p><?php the_field('fwt_update_box_text', 19); ?></p>
                             <span class="yellowimg arrow thinner">News</span>
                         </a>
                   </div>
                   
                   <div class="col homeblock contactblock">
-                        <a href="#">
+                        <a href="<?php the_field('contact_us_map_link', 19); ?>" target="_blank">
                             <h2>CONTACT US</h2>
                             <span class="yellowimg arrow thinner">View</span>
                         </a>

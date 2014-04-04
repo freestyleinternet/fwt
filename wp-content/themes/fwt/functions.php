@@ -26,10 +26,15 @@ Misc Theme Functions
 // add featured image support
 function custom_image_sizes() {
     add_theme_support('post-thumbnails');
+	add_image_size('slide', 480, 370, TRUE);
+	add_image_size('slidesub', 620, 250, TRUE);
+	add_image_size('slidecasestudy', 960, 376, TRUE);
     add_image_size('quotefeature', 220, 156, TRUE);
 	add_image_size('customthumb', 147, 190, TRUE);
 	add_image_size('newsthumb', 140, 99, TRUE);
 	add_image_size('person', 160, 999, TRUE);
+	add_image_size('smallthumb', 60, 40, TRUE);
+	add_image_size('medthumb', 70, 40, TRUE);
 }
 add_action('after_setup_theme', 'custom_image_sizes');
 
@@ -38,6 +43,12 @@ add_action('after_setup_theme', 'custom_image_sizes');
  */
 function mb_add_post_type_caps() {
 	// mb_add_capabilities( 'portfolio' );
+}
+
+$page_children = get_pages('child_of=15');
+foreach($page_children as $child){
+	$current_page_template = get_post_meta($child->ID,'_wp_page_template',true);
+	if($current_page_template != 'page-our-services-single.php') update_post_meta($child->ID,'_wp_page_template','page-our-services-single.php');
 }
 
 /**
@@ -107,7 +118,7 @@ function feature_init()
 	$args['labels'] 				= $labels;
 	$args['supports'] 		  	= array('title','editor','thumbnail');
 	$args['rewrite']		   		= array('slug' => 'people');
-	$args['menu_icon']		 	= get_bloginfo('template_directory').'/assets/images/work.png';
+	$args['menu_icon']		 	= get_bloginfo('template_directory').'/assets/images/people-admin.png';
 	$args['show_in_menu']	= true;
 	$args['has_archive']	    = true;
 	
@@ -138,7 +149,7 @@ function feature_init()
 	$args['labels'] 				= $labels;
 	$args['supports'] 		  	= array('title','editor','thumbnail');
 	$args['rewrite']		   		= array('slug' => 'casestudies');
-	$args['menu_icon']		 	= get_bloginfo('template_directory').'/assets/images/work.png';
+	$args['menu_icon']		 	= get_bloginfo('template_directory').'/assets/images/casestudy-admin.png';
 	$args['show_in_menu']	= true;
 	$args['has_archive']	    = true;
 	

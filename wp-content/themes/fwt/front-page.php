@@ -13,41 +13,17 @@
                 data-cycle-prev="#prev"
                 data-cycle-next="#next">
                 <div class="cycle-pager"></div>
-                <div class="slide">
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
-                    <div class="text">
-                        <h1>LEADING THE WAY IN THE WORLD OF WAYFINDING UK.</h1>
-                        <a class="yellowimg arrow" href="index.php">READ MORE</a>
+                
+				<?php while(the_repeater_field('slide')): ?>    
+                    <div class="slide">
+                        <img src="<?php echo the_sub_field('slide_image'); ?>">
+                        <div class="text">
+                            <h1><?php echo the_sub_field('main_slide_title'); ?></h1>
+                            <a class="yellowimg arrow" href="<?php the_sub_field('slide_read_more_link'); ?>">READ MORE</a>
+                        </div>
                     </div>
-                </div>
-                <div class="slide">
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
-                    <div class="text">
-                        <h1>LEADING THE WAY IN THE WORLD OF WAYFINDING UK.</h1>
-                        <a class="yellowimg arrow" href="index.php">READ MORE</a>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
-                    <div class="text">
-                        <h1>LEADING THE WAY IN THE WORLD OF WAYFINDING UK.</h1>
-                        <a class="yellowimg arrow" href="index.php">READ MORE</a>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
-                    <div class="text">
-                        <h1>LEADING THE WAY IN THE WORLD OF WAYFINDING UK.</h1>
-                        <a class="yellowimg arrow" href="index.php">READ MORE</a>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/slide1.jpg">
-                    <div class="text">
-                        <h1>LEADING THE WAY IN THE WORLD OF WAYFINDING UK.</h1>
-                        <a class="yellowimg arrow" href="index.php">READ MORE</a>
-                    </div>
-                </div>
+                <?php  endwhile; ?>
+
             </div>
         </div>
     </div>
@@ -60,51 +36,51 @@
                   
                   <div class="col homeblock">
                         <a href="#">
-                            <img class="absolute" src="<?php bloginfo('template_directory'); ?>/assets/images/case-study-box.jpg">
+                            <img class="absolute" src="<?php the_field('our_services_featured_image'); ?>">
                             <h2>OUR SERVICES</h2>
-                            <p>We stated to look at this then at also the leap into electronic type setting, remain was popularised in the 1960s with the release of.</p>
+                            <p><?php the_field('our_services_introduction_text'); ?></p>
                             <span class="yellowimg arrow thinner">Read More</span>
                         </a>
                   </div> 
                   
                   <div class="col homeblock">
-                        <a href="#">
-                            <img class="absolute" src="<?php bloginfo('template_directory'); ?>/assets/images/casestudy-box.jpg">
+                        <a href="<?php bloginfo('url'); ?>/case-studies/">
+                            <img class="absolute" src="<?php the_field('case_studies_featured_image'); ?>">
                             <h2>CASE STUDIES</h2>
-                            <p>We stated to look at this then at also the leap into electronic type setting, remain was popularised in the 1960s with the release of.</p>
+                            <p><?php the_field('case_studies_introduction_text'); ?></p>
                             <span class="yellowimg arrow thinner">Read More</span>
                         </a>
                   </div>  
                   
                  <div class="col homeblock update">
-                        <a href="#">
-                            <img src="<?php bloginfo('template_directory'); ?>/assets/images/no-right-of-way.jpg">
+                        <a href="<?php bloginfo('url'); ?>/news/">
+                            <img src="<?php the_field('fwt_update_featured_image'); ?>">
                             <h2>FWT UPDATE</h2>
-                            <p>FWT win the contract to supply all street  Centro Transport Executive that is running so the text limit is running here to two lines  read more...</p>
+                            <p><?php the_field('fwt_update_box_text'); ?></p>
                             <span class="yellowimg arrow thinner">News</span>
                         </a>
                   </div>  
                   
                   <div class="col homeblock">
-                        <a href="#">
-                            <img class="absolute" src="<?php bloginfo('template_directory'); ?>/assets/images/case-study-box.jpg">
+                        <a href="<?php bloginfo('url'); ?>/our-principles/">
+                            <img class="absolute" src="<?php the_field('our_principles_featured_image'); ?>">
                             <h2>OUR PRINCIPLES</h2>
-                            <p>We stated to look at this then at also the leap into electronic type setting, remain was popularised in the 1960s with the release of.</p>
+                            <p><?php the_field('our_principles_introduction_text'); ?></p>
                             <span class="yellowimg arrow thinner">Read More</span>
                         </a>
                   </div>  
                   
                   <div class="col homeblock">
-                        <a href="#">
-                            <img class="absolute" src="<?php bloginfo('template_directory'); ?>/assets/images/case-study-box.jpg">
+                        <a href="<?php bloginfo('url'); ?>/our-people/">
+                            <img class="absolute" src="<?php the_field('our_people_featured_image'); ?>">
                             <h2>OUR PEOPLE</h2>
-                            <p>We stated to look at this then at also the leap into electronic type setting, remain was popularised in the 1960s with the release of.</p>
+                            <p><?php the_field('our_people_introduction_text'); ?></p>
                             <span class="yellowimg arrow thinner">Read More</span>
                         </a>
                   </div>  
                   
                   <div class="col homeblock contactblock">
-                        <a href="#">
+                        <a href="<?php the_field('contact_us_map_link'); ?>" target="_blank">
                             <h2>CONTACT US</h2>
                             <span class="yellowimg arrow thinner">View</span>
                         </a>

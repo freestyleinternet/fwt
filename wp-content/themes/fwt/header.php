@@ -89,7 +89,7 @@
                 <div class="contact">
                 	<h1>Leading experts in transport information and mapping</h1>
                     <p>Call: <span>0208 345 1234</span></p>
-                    <a class="yellowimg envelope" href="index.php">E-NEWS SIGN UP</a>
+                    <a class="yellowimg envelope" href="<?php bloginfo('url'); ?>/add-to-mailing-list/">E-NEWS SIGN UP</a>
                 </div>
                 <a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/images/fwt-logo.svg" alt="FWT"/></a>
 				<?php

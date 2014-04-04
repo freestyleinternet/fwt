@@ -22,32 +22,24 @@
                             ?>
                         </div>
                       <div class="foot3">
-                       	<h2>Our Services</h2>
+                       	<h2>Our Partners</h2>
+                          
+						  <?php while(the_repeater_field('our_partners', 19)): ?>
                           <article>
-                            <a href="index.php">
-                                <img src="<?php bloginfo('template_directory'); ?>/assets/images/footer-article-placeholder.jpg" alt="National Map Centre"/>
-                                <div class="vertical-align"><h1>National Map Centre</h1></div> 
+                            <a href="<?php echo the_sub_field('partner_website_link'); ?>">
+                                <img class="borderbox" src="<?php echo the_sub_field('partner_featured_image'); ?>" alt="<?php echo the_sub_field('partner_name'); ?>"/>
+                                <div class="vertical-align"><h1><?php echo the_sub_field('partner_name'); ?></h1></div> 
                             </a>
                           </article>
-                          <article>
-                          	<a href="index.php">
-                                <img src="<?php bloginfo('template_directory'); ?>/assets/images/footer-article-placeholder.jpg" alt="Oxford Cartographers"/>
-                                <div class="vertical-align"><h1>Oxford Cartographers</h1></div>
-                            </a> 
-                          </article>
-                          <article>
-                          	<a href="index.php">
-                                <img src="<?php bloginfo('template_directory'); ?>/assets/images/footer-article-placeholder.jpg" alt="CHK America"/>
-                                <div class="vertical-align"><h1>CHK America (FWT in the USA)</h1></div> 
-                            </a>
-                          </article>
+                          <?php  endwhile; ?>
+                          
                         </div>
                         <div class="foot4">
                        		<h2>STANDARDS</h2>
                             <ul class="img-list">
-                                <li><img src="<?php bloginfo('template_directory'); ?>/assets/images/iso.png" alt="ISO"/></li>
-                                <li><img src="<?php bloginfo('template_directory'); ?>/assets/images/iso.png" alt="ISO"/></li>
-                                <li><img src="<?php bloginfo('template_directory'); ?>/assets/images/iso.png" alt="ISO"/></li>
+                                <li><img src="<?php bloginfo('template_directory'); ?>/assets/images/iso.png" alt="ISO 9001"/></li>
+                                <li><img src="<?php bloginfo('template_directory'); ?>/assets/images/iso2.png" alt="ISO 14001"/></li>
+                                <li><img src="<?php bloginfo('template_directory'); ?>/assets/images/iso3.png" alt="ISO 18001"/></li>
                             </ul>
                         </div>
                     </div>
