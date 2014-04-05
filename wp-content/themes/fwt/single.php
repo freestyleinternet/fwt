@@ -17,6 +17,7 @@
                             <p><?php the_field('quote_by'); ?></p>
                         </blockquote>
                         <div class="secondbody"><?php the_content(); ?></div>
+                        <div class="sharethisbar"><?php get_template_part( 'templates/partials/inc-socialbuttons'); ?></div>
                         <div class="downloads">
                         	<h1>Related links</h1>
                             <p>Arriving the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley it to make a type specimen book. It has survivedchanged. </p>

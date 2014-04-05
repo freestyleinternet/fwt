@@ -29,7 +29,7 @@
 
 ?>
 <aside>
-  <?php get_template_part( 'templates/partials/inc-socialbuttons'); ?>
+  <div class="sharethisbar"><?php get_template_part( 'templates/partials/inc-socialbuttons'); ?></div>
   <div class="signup">
       <h2>SIGN UP FOR OUR E-NEWS</h2>
       <?php if ($subscribeError == TRUE) { ?><p class="errormsg"><?php echo $subscribeError; ?></p><?php } ?>

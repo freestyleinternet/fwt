@@ -19,7 +19,7 @@
                         <img src="<?php echo the_sub_field('slide_image'); ?>">
                         <div class="text">
                             <h1><?php echo the_sub_field('main_slide_title'); ?></h1>
-                            <a class="yellowimg arrow" href="<?php the_sub_field('slide_read_more_link'); ?>">READ MORE</a>
+                            <a class="yellowimg arrow thinner" href="<?php the_sub_field('slide_read_more_link'); ?>">READ MORE</a>
                         </div>
                     </div>
                 <?php  endwhile; ?>

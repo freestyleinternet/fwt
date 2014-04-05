@@ -45,11 +45,28 @@ function mb_add_post_type_caps() {
 	// mb_add_capabilities( 'portfolio' );
 }
 
+
+/**
+ * Use same template for all services pages
+ */
 $page_children = get_pages('child_of=15');
 foreach($page_children as $child){
 	$current_page_template = get_post_meta($child->ID,'_wp_page_template',true);
 	if($current_page_template != 'page-our-services-single.php') update_post_meta($child->ID,'_wp_page_template','page-our-services-single.php');
 }
+
+
+
+/**
+ * Blog search function to search blog only
+ */
+function SearchFilter($query) {
+    if ($query->is_search) {
+        $query->set('post_type', 'post');
+    }
+    return $query;
+}
+add_filter('pre_get_posts','SearchFilter');
 
 /**
  * Filter Yoast SEO Metabox Priority

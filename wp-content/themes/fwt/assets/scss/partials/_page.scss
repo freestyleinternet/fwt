@@ -18,6 +18,7 @@ body {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
  body  { text-shadow: 0.0em 0.0em 0.05em #3b3b3b;  }
 }
+
 a {
 	color: $linkColor;
 	text-decoration:none;
@@ -94,16 +95,25 @@ ul {
 		width:auto;
 	}
 }
-
 .yellowimg.thinner {
 	padding-top:em(2);
 	padding-bottom:em(2);
+}
+.rightalign {
+	float:right;
+}
+.leftalign {
+	float:left;
+}
+
+.addthis_button_tweet {
+	width:80px;
 }
 
 .download {
 	color:#fff;
 	display:inline-block;
-	margin-bottom:em(10);
+	margin-bottom:em(4);
 	padding:em(3) em(12) em(3) em(24);
 	background:$brand-dark url(#{$assetPath}/download-arrow.svg) no-repeat 7px center;
 }
@@ -225,6 +235,23 @@ header {
 	}
 }
 
+.sharethisbar {
+	display:block;
+	margin-top:em(20);
+	@include bp(desktop) {
+		display:none;
+		visibility:hidden;
+	}
+}
+aside .sharethisbar {
+	display:none;
+	visibility:hidden;
+	@include bp(desktop) {
+		display:block;
+		visibility:visible;
+	}
+}
+
 main {
 	padding-top:em(20);
 	background:#e5e5e5;
@@ -241,6 +268,11 @@ main {
 			margin-top:0;
 			margin-bottom:em(2);
 		}
+	}
+	h1.filter-title {
+		font-size:em(23);
+		line-height:29px;
+		margin-bottom:em(12);
 	}
 	h2 {
 		color:#000;
@@ -420,6 +452,12 @@ main .homeblock.update {
 	}
 	p {
 		color:#fff;
+		@include bp(tablet) {
+			width:100%;
+		}
+		@include bp(desktop) {
+			width:62%; /*  172/307 */
+		}
 	}
 	img {
 		position:absolute;
@@ -428,6 +466,13 @@ main .homeblock.update {
 		margin-top:-47.5px;
 		max-height:149px;
 		z-index:1;
+		@include bp(tablet) {
+			display:none;
+		}
+		@include bp(desktop) {
+			
+			display:inline-block;
+		}
 	}
 }
 main .homeblock.contactblock {
@@ -480,14 +525,17 @@ aside .homeblock {
 	color:#000;
 	background:$brand-second;
 	border-bottom:1px solid #000;
-	padding-left:em(23);
+	padding:em(2) 0 em(2) em(30);
+	font-size:em(14);
 	&:hover {
 		color: #fff;
-		background:#000 url(#{$assetPath}/dropdown-arrow.svg) no-repeat 8px center;
+		background:#000 url(#{$assetPath}/dropdown-arrow.svg) no-repeat 11px center;
 	}
 }
 .sidenav li:last-child a {
 	border-bottom:none;
+	padding-bottom:em(13);
+	background-position:11px 6px;
 }
 
 /*  Our People */
@@ -525,9 +573,20 @@ aside .homeblock {
 		span {
 			position:relative;
 			top:em(3);
-			padding:em(2) em(5);
+			padding:em(4) em(5);
 			margin-left:em(10);
 			background:$brand-second;
+			@include bp(desktop) {
+				padding:em(2) em(5);
+			}
+			img {
+				position:relative;
+				top:em(-3);
+				@include bp(desktop) {
+					top:0;
+				}
+			}
+			
 		}
 	}
 }

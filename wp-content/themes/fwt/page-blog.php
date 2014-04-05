@@ -10,14 +10,15 @@ get_header(); ?>
             	<section>
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <h1><?php the_title(); ?></h1>
-                        <?php the_content(); ?>
+                         <?php get_search_form(); ?> 
+						<?php the_content(); ?>
  					<?php endwhile; endif; ?>
                    
                        <div class="posts">
                             <?php 
 								$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 								
-								$args = array( 'post_type' => 'post', 'posts_per_page' => -1);
+								$args = array( 'post_type' => 'post', 'paged' => $paged);
 								$wp_query = new WP_Query($args);
 								
 								while ( have_posts() ) : the_post(); 
@@ -35,12 +36,11 @@ get_header(); ?>
                                 </a>
                             </article>
                              <?php endwhile; ?>
-                             <ul class="navigation">
-                                <li class="left"><?php next_posts_link( '&larr; Older posts' ); ?></li>
-                                <li class="right"><?php previous_posts_link( 'Newer posts &rarr;' ); ?></li>
-                            </ul>
+                             <?php if(function_exists('wp_paginate')) {
+									wp_paginate();
+								} ?>
                         </div>
-					
+						<div class="sharethisbar"><?php get_template_part( 'templates/partials/inc-socialbuttons'); ?></div>
                 </section>
                 <?php get_sidebar(); ?>
                 

@@ -1,4 +1,17 @@
 /* FORMS */
+main fieldset  {
+	position:relative;
+	float:left;
+	width:100%;
+	margin-bottom:em(9);
+	@include bp(tablet) {
+		width:49%;
+		margin-right:2%;
+		&:nth-of-type(even) {
+			margin-right:0;
+		}
+	}
+}
 label {
 	color:#fff;
 	display:block;
@@ -45,6 +58,24 @@ body .gform_wrapper .gform_footer input[type=submit] {
 	label {
 		color:#000;
 		margin-bottom:em(5);
+	}
+}
+.search-form {
+	float:right;
+	position:relative;
+	@include bp(tablet) {
+		top:em(-30);
+	}
+	@include bp(desktop) {
+		top:em(-39);
+	}
+	input {
+		color:#000;
+		padding:em(5) em(5) em(3) em(5);
+		font-weight:700;
+	}
+	@include bp(tablet) {
+		width:33.54838709677419%; /*  208/620 */
 	}
 }
 

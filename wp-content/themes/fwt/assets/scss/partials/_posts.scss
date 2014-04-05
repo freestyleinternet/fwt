@@ -113,8 +113,68 @@ code, tt { }
 .sharing .share-facebook { padding-top: 1px; }
 .sharing .share-googleplus { margin-left: 30px; }
 
-/* POST NAVIGATION */
-
+/* POST NAVIGATION / PAGINATION */
 .navigation { clear: both; }
 .next-posts { float: left; }
 .prev-posts { float: right; }
+.nextprevlinks a {
+	padding-top:1px;
+	padding-bottom:1px;
+}
+
+.navigation {
+	display:inline-block;
+	width:100%;
+	padding:em(30) 0;
+	border-top:1px solid $brand-dark;
+}
+.wp-paginate .title {
+	display:none;
+	visibility:hidden;
+}
+.wp-paginate a {
+	height:26px !important;
+	background:none !important; 
+	border:none !important; 
+	color:#000 !important;
+	font-size:em(14) !important;
+	font-weight:700 !important;
+	padding:3px  10px !important;
+}
+.wp-paginate a:hover {
+}
+
+.wp-paginate a:active,
+.wp-paginate .current {
+	color:#000 !important;
+	background:$brand-second !important;
+	border:none !important; 
+	font-weight:700 !important;
+	padding:3px 10px !important;
+}
+.wp-paginate li span.page.current {
+	
+}
+.wp-paginate .prev,
+.wp-paginate .prev:hover {
+	text-indent:-3000px !important;
+	width:71px !important;
+	height:26px;
+	display:inline-block !important;
+	background:$brand-second url(#{$assetPath}/first.svg) no-repeat center left !important;
+}
+.wp-paginate .next,
+.wp-paginate .next:hover {
+	width:71px !important;
+	height:26px;
+	text-indent:-3000px !important;
+	display:inline-block !important;
+	background:$brand-second url(#{$assetPath}/last.svg) no-repeat center left !important;
+}
+
+
+
+
+
+
+

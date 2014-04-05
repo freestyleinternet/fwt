@@ -7,11 +7,12 @@
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <h1><?php the_title(); ?></h1>
                         <?php the_content(); ?>
+                        <div class="sharethisbar"><?php get_template_part( 'templates/partials/inc-socialbuttons'); ?></div>
                     <?php endwhile; endif; ?>
                 </section>
                 
                 <aside>
-                	<?php get_template_part( 'templates/partials/inc-socialbuttons'); ?>
+                	<div class="sharethisbar"><?php get_template_part( 'templates/partials/inc-socialbuttons'); ?></div>
                 	
                      <div class="homeblock update">
                         <a href="<?php bloginfo('url'); ?>/news/">

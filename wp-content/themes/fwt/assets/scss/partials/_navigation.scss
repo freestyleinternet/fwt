@@ -106,7 +106,10 @@
 	@include bp(desktop) {
 		float:left; 
 		width:auto;
-		top:4px;
+		top:5px;
+		@media screen and (-webkit-min-device-pixel-ratio:0) {
+			 top:8px;
+		}
 	}
 }
 .mainmenu li {
@@ -129,7 +132,8 @@
 	right:-1px;*/
 }
 .mainmenu li:hover,
-.mainmenu li.current_page_item {
+.mainmenu li.current_page_item,
+.mainmenu li.current_page_parent {
 	background:$brand-second;
 	a {
 		color: #000;
@@ -149,6 +153,31 @@
 	padding:em(9) em(6) em(22) em(6);
 	@include bp(desktop) { 
 		padding:em(9) em(17) em(22) em(17);
+	}
+}
+.mainmenu li.current_page_parent a,
+.mainmenu li.current_page_item.menu-item-has-children a {
+		color: #000;
+		padding:em(9) em(6) em(20) em(6);
+		@include bp(desktop) { 
+			padding:em(9) em(17) em(9) em(17);
+		}
+}
+.mainmenu li.current_page_parent.menu-item-has-children:hover a,
+.mainmenu li.current_page_item.menu-item-has-children:hover a,
+.mainmenu li.current_page_item.menu-item-has-children a:hover {
+	padding:em(9) em(6) em(22) em(6);
+	@include bp(desktop) { 
+		padding:em(9) em(17) em(22) em(17);
+	}
+}
+.mainmenu li.current_page_parent.menu-item-has-children,
+.mainmenu li.current_page_item.menu-item-has-children {
+	ul li a {
+		font-size:em(14);
+		font-weight:400;
+		padding-bottom:em(9) !important;
+		padding-left:em(30) !important;
 	}
 }
 
@@ -171,10 +200,12 @@
 	-transition: opacity 0.2s;
 	
 	@include bp(desktop) { 
-		top: 50px;
+		top: 48px;
 	}
 	
 }
+
+.mainmenu li.current_page_item.menu-item-has-children ul li,
 .mainmenu li ul li { 
 	display: block; 
 	background:$brand-second;
@@ -187,6 +218,8 @@
 		border-bottom:none;
 	}
 }
+
+.mainmenu li.current_page_item.menu-item-has-children ul li:hover,
 .mainmenu li ul li:hover { 
 	color:#000;
 	background:$brand-second;
