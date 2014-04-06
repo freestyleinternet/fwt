@@ -55,7 +55,11 @@ foreach($page_children as $child){
 	if($current_page_template != 'page-our-services-single.php') update_post_meta($child->ID,'_wp_page_template','page-our-services-single.php');
 }
 
-
+function the_url( $url ) {
+    return get_bloginfo( 'url' );
+}
+ 
+add_filter( 'login_headerurl', 'the_url' );
 
 /**
  * Blog search function to search blog only

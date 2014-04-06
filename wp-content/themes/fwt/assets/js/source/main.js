@@ -1,5 +1,7 @@
 (function($) {
 	
+	
+	
 	$( ".nextprevlinks a" ).addClass( "yellowimg rightarrow" );
 	//$( ".nextprevlinks a:last-of-type" ).addClass( "yellowimg rightarrow" );
 

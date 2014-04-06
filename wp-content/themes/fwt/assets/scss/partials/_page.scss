@@ -160,8 +160,25 @@ main section.single-style-2 .contact-details {
 		margin-top:em(9);
 		margin-bottom:em(34);
 		li {
-			font-size:em(14);
+			font-size:em(13);
+			@include bp(tablet) { 
+				font-size:em(14);
+			}
 		}
+	}
+}
+
+main section.single-style-2 .contact-details.withincontent {
+	border-top:none;
+	padding:0;
+	margin-top:0;
+	margin-bottom:0;
+	@include bp(tablet) { 
+		display:none;
+		visibility:hidden;
+	}
+	ul {
+		clear:left;
 	}
 }
 
@@ -331,10 +348,34 @@ main .secondbody {
 }
 main section.single-style-2 {
 	h1 {
+		clear:left;
+		font-size:em(16);
 		margin-bottom:0;
+		@include bp(tablet) {
+			clear:none;
+			font-size:em(23);
+		}
+	}
+	img {
+		width:40%;
+		height:auto;
+		@include bp(tablet) {
+			width:auto;
+		}
+	}
+	h2 {
+		display:none;
+		margin:em(20) 0;
+		float:left;
+		@include bp(tablet) {
+			float:none;
+			display:inline-block;
+			margin:0 0 em(6) 0;
+		}
 	}
 	.linkedinlogo {
 		margin-top:em(6);
+		margin-bottom:em(24);
 	}
 }
 
@@ -507,7 +548,10 @@ aside .homeblock {
 	padding:em(14) em(12);
 	margin-top:em(20);
 	&.first {
-		margin-top:em(16);
+		margin-top:em(8);
+		@include bp(desktop) {
+			margin-top:em(16);
+		}
 	}
 }
 
