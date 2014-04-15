@@ -1,15 +1,18 @@
 /* GENERAL */
 html,body {
     height:100%;
+
 }
+
 body {
 	color:$body-copy;
-	font-family: 'Karla', sans-serif;
+	font-family: 'karla', sans-serif;
 	font-size:100%;
 	font-weight:400;
-	background:#000;
+	background:#fff;
 	@include bp(tablet) { 
 		font-size:95%;
+		background:#000;
 	}
 	@include bp(desktop) { 
 		font-size:100%;
@@ -106,8 +109,14 @@ ul {
 	float:left;
 }
 
-.addthis_button_tweet {
-	width:80px;
+/*  Share this */
+.stButton .stButton_gradient {
+	height: 24px !important;
+	margin-bottom:5px;
+}
+.stButton .stFb, .stButton .stTwbutton, .stButton .stMainServices {
+	height: 24px !important;
+	margin-bottom:5px;
 }
 
 .download {
@@ -119,6 +128,7 @@ ul {
 }
 
 .downloads {
+	width:100%;
 	padding:em(14) 0;
 	margin-top:em(23);
 	border-top:1px solid $brand-dark;
@@ -183,25 +193,30 @@ main section.single-style-2 .contact-details.withincontent {
 }
 
 header {
-	min-height:128px;
+	position:relative;
+	min-height:160px;
 	background:#fff;
 	@include bp(tablet) { 
 		min-height:182px;
 	}
 }
 .logo {
+	position:relative;
+	top:em(-23);
 	width:10%;
 	@include bp(tablet) { 
 		width:auto;
+		top:0;
 	}
 }
 .contact {
 	float:right;
 	width:60%;
 	text-align:right;
-	margin-top:em(12);
+	margin-top:em(32);
 	@include bp(tablet) { 
 		width:55%;
+		margin-top:em(12);
 	}
 	h1 {
 		font-size:em(12);
@@ -519,8 +534,11 @@ main .homeblock.update {
 main .homeblock.contactblock {
 	position:relative;
 	background: url(#{$assetPath}/contact-us-map-block.jpg) no-repeat top left;
+	@media only screen and (min-width: 400px) {
+		background: url(#{$assetPath}/map_sm.png) no-repeat top left;	
+	}
 	@include bp(tablet) {
-		background: url(#{$assetPath}/contact-us-map-block-tablet.jpg) no-repeat top right;
+		background: url(#{$assetPath}/contact-us-map-block-tablet.png) no-repeat top right;
 	}
 	@include bp(desktop) {
 		background: url(#{$assetPath}/contact-us-map-block.jpg) no-repeat top left;
@@ -541,6 +559,10 @@ main .homeblock.contactblock {
 		min-height:161px;
 		display:block;
 	}
+}
+.home main .homeblock h2,
+.page-template-archive-casestudies-php main .homeblock h2 {
+	line-height:22px;
 }
 
 aside .homeblock {
@@ -706,6 +728,9 @@ aside .homeblock {
 		max-width: none;
 	}
 }
+img.mapgraphic {
+	margin-top:em(8);
+}
 #content {
 	img {
 		display:block;
@@ -783,7 +808,9 @@ aside .homeblock {
 
 /*  Footer */
 footer {
+	position:relative;
 	padding:em(24) 0;
+	background:#000;
 	h2 {
 		color:#fff;
 		font-size:em(12);

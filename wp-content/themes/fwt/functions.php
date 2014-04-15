@@ -45,6 +45,15 @@ function mb_add_post_type_caps() {
 	// mb_add_capabilities( 'portfolio' );
 }
 
+/**
+ * Allow SVG file upload in Wordpress Admin area
+ */
+function cc_mime_types( $mimes ){
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'cc_mime_types' );
+
 
 /**
  * Use same template for all services pages

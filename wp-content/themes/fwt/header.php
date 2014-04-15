@@ -27,7 +27,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-72x72-precomposed.png">
     <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
     <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-precomposed.png">
-        
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "701044eb-d205-461c-95f2-1b96b1e3ee47", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>  
     <link href='http://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript">
@@ -77,28 +78,25 @@
 	<!--[if lt IE 8]>
 	    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 	<![endif]-->
-    
-
-    <div class="mobileContainer"> 
-        <div id="slidingMenu">
-            <div id="slidingMenuContent">
-				<?php
-					wp_nav_menu(
-						array(
-						'menu'		  => 'main-menu',
-						'container'       => '',
-						'menu_class'	=> 'mobilemenu'
-					));
-                ?>
-            </div>
-    	</div>
+    <div class="topmenumobile">
+        <nav>
+          <?php
+                wp_nav_menu(
+                    array(
+                    'menu'		  => 'mobile-menu',
+                    'container'       => '',
+                    'menu_class'	=> ''
+                ));
+            ?>
+        </nav>
+    </div>
     
     <div id="page">
    		<header>
     		<div class="wrapper clearfix">
                 <div class="contact">
-                	<h1>Leading experts in transport information and mapping</h1>
-                    <p>Call: <span>0208 345 1234</span></p>
+                    <?php if( get_field('top_strap_line', 19) ): ?><h1><?php the_field('top_strap_line', 19); ?></h1><?php endif; ?>
+                    <?php if( get_field('telephone_number', 19) ): ?><p>Call: <span><?php the_field('telephone_number', 19); ?></span></p><?php endif; ?>
                     <a class="yellowimg envelope" href="<?php bloginfo('url'); ?>/add-to-mailing-list/">E-NEWS SIGN UP</a>
                 </div>
                 <a class="logo" href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/images/fwt-logo.svg" alt="FWT"/></a>
@@ -112,6 +110,6 @@
                 ?>
     		</div>
     	</header>
-        <a href="javascript:void(0);" class="show-menu-button">Menu</a>
+        <!--<a href="javascript:void(0);" class="show-menu-button">Menu</a>-->
         
        

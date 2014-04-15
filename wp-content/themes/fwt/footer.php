@@ -22,7 +22,7 @@
                             ?>
                         </div>
                       <div class="foot3">
-                       	<h2>Our Partners</h2>
+                       	<h2>The CHK Group</h2>
                           
 						  <?php while(the_repeater_field('our_partners', 19)): ?>
                           <article>
