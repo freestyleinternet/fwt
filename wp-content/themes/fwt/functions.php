@@ -35,6 +35,7 @@ function custom_image_sizes() {
 	add_image_size('person', 160, 999, TRUE);
 	add_image_size('smallthumb', 60, 40, TRUE);
 	add_image_size('medthumb', 70, 40, TRUE);
+	add_image_size('iso', 68, 52, TRUE);
 }
 add_action('after_setup_theme', 'custom_image_sizes');
 

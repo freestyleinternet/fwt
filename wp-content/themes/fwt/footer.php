@@ -36,11 +36,14 @@
                         </div>
                         <div class="foot4">
                        		<h2>STANDARDS</h2>
-                            <ul class="img-list">
-                                <li><img src="<?php bloginfo('template_directory'); ?>/assets/images/iso.png" alt="ISO 9001"/></li>
-                                <li><img src="<?php bloginfo('template_directory'); ?>/assets/images/iso2.png" alt="ISO 14001"/></li>
-                                <li><img src="<?php bloginfo('template_directory'); ?>/assets/images/iso3.png" alt="ISO 18001"/></li>
-                            </ul>
+                            <?php while(the_repeater_field('website_standards_footer', 19)): ?>
+                          <article class="sponsor ">
+                            <a href="<?php echo the_sub_field('link_to_a_page'); ?>">
+                                <img class="borderbox" src="<?php echo the_sub_field('logo_file'); ?>" alt="<?php echo the_sub_field('pdescription'); ?>"/>
+                                <div class="vertical-align second"><h1><?php echo the_sub_field('description'); ?></h1></div> 
+                            </a>
+                          </article>
+                          <?php  endwhile; ?>
                         </div>
                     </div>
                 </footer>

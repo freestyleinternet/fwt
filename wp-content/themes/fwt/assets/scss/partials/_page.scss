@@ -535,10 +535,13 @@ main .homeblock.contactblock {
 	position:relative;
 	background: url(#{$assetPath}/contact-us-map-block.jpg) no-repeat top left;
 	@media only screen and (min-width: 400px) {
-		background: url(#{$assetPath}/map_sm.png) no-repeat top left;	
+		background: url(#{$assetPath}/map-large.png) no-repeat -50px 0;	
 	}
 	@include bp(tablet) {
-		background: url(#{$assetPath}/contact-us-map-block-tablet.png) no-repeat top right;
+		background: url(#{$assetPath}/contact-us-map-block-tablet.png) no-repeat  center right;
+	}
+	@media only screen and (min-width: 800px) {
+		background: url(#{$assetPath}/map-large.png) no-repeat -140px 0;	
 	}
 	@include bp(desktop) {
 		background: url(#{$assetPath}/contact-us-map-block.jpg) no-repeat top left;
@@ -908,6 +911,31 @@ footer article a {
 	width:100%;
 	display:block;
 }
+footer article.sponsor  {
+	width:100%;
+	display:inline-block;
+	margin-bottom:em(10);
+	img {
+		float:left;
+		margin-right:5%;
+		@include bp(tablet) { 
+			width:30.76923076923077%;  /*  80/260*/
+		}
+	}
+	h1 {
+		float:left;
+		color:$brand-second;
+		font-size:em(12);
+		vertical-align: middle;
+		@include bp(tablet) { 
+			width:90%;  /*  140/260*/
+		}
+	}
+}
+footer article a {
+	width:100%;
+	display:block;
+}
 
 .vertical-align {
 	width:100%;
@@ -919,6 +947,15 @@ footer article a {
 	}
 	@include bp(desktop) { 
 		height:50px;
+	}
+	&.second {
+		height:64px;
+		@include bp(desktop) { 
+			height:64px;
+		}
+		@include bp(desktop) { 
+			height:64px;
+		}
 	}
 }
 
