@@ -404,6 +404,14 @@ section {
 	}
 }
 
+.single-casestudies section ul {
+	list-style-type:disc;
+	margin-left:em(16);
+	li {
+		font-size:em(14);
+	}
+}
+
 aside {
 	float:left;
 	width:100%;
