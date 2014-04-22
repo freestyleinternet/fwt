@@ -10,7 +10,7 @@
 								the_post_thumbnail('person', array('class' => 'borderbox alignright'));
 							}
 						?>
-                        <a class="linkedinlogo" href="<?php the_field('linkedin_address'); ?>"></a>
+                        <?php if( get_field('linkedin_address') ): ?><a class="linkedinlogo" href="<?php the_field('linkedin_address'); ?>"></a><?php endif; ?>
                         <h1><?php the_title(); ?></h1>
                         <h2><?php the_field('job_title'); ?></h2>
 						<div class="contact-details withincontent">
