@@ -18,13 +18,23 @@
                         </blockquote>
                         <div class="secondbody"><?php the_content(); ?></div>
                         <div class="sharethisbar"><?php get_template_part( 'templates/partials/inc-socialbuttons'); ?></div>
+                        
+                        <?php if( get_field('add_related_link') ): ?>
+                        
                         <div class="downloads">
-                        	<h1>Related links</h1>
-                            <p>Arriving the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley it to make a type specimen book. It has survivedchanged. </p>
-                            <a href="#">www.urlpartner.com/FWT</a>
+                        	<h1><?php the_field('main_title'); ?></h1>
+                            <?php while(the_repeater_field('add_related_link')): ?>
+                            	<p><?php the_sub_field('overview'); ?></p>
+                            	<a href="<?php the_sub_field('full_website_link'); ?>"><?php the_sub_field('full_website_link'); ?></a>
+							<?php  endwhile; ?>
 						</div>
+                        
+                        <?php endif; ?>
+                        
                         <a class="yellowimg leftarrow thinner" href="<?php bloginfo('url'); ?>/news/">NEWS</a>
-                    <?php endwhile; ?>
+                    	
+                        
+					<?php endwhile; ?>
                 </section>
                 
                 <?php get_sidebar(); ?>

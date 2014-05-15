@@ -23,9 +23,7 @@ get_header(); ?>
 								while ( have_posts() ) : the_post(); 
 							?>
                             <article>
-                            	<?php if( get_field('linkedin_address') ): ?>
-                            		<a class="linkedin" href="<?php the_field('linkedin_address'); ?>" target="_blank"></a>
-                                <?php endif; ?>
+                            	
                             	<a href="<?php echo get_permalink(); ?>">
                                 	<h1><?php the_title(); ?></h1>
                                 	<h2><?php the_field('job_title'); ?></h2>

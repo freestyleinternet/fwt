@@ -27,12 +27,15 @@
 							<?php the_content(); ?>
                             <div class="sharethisbar"><?php get_template_part( 'templates/partials/inc-socialbuttons'); ?></div>
                         </div>
-                        <div class="downloads">
-                        	<h1>CASE STUDIES AND DOWNLOADS</h1>
-                            <?php while(the_repeater_field('files')): ?>
-                                <a class="download" href="<?php the_sub_field('pdf_download'); ?>"><?php the_sub_field('download_button_name'); ?></a>
-                            <?php  endwhile; ?>
-						</div>
+                        
+                        <?php if( get_field('files') ): ?>
+                            <div class="downloads">
+                                <h1>CASE STUDIES AND DOWNLOADS</h1>
+                                <?php while(the_repeater_field('files')): ?>
+                                    <a class="download" href="<?php the_sub_field('pdf_download'); ?>"><?php the_sub_field('download_button_name'); ?></a>
+                                <?php  endwhile; ?>
+                            </div>
+                        <?php endif; ?>
                         
 						<div class="nextprevlinks">
 							<?php previous_post('%', 'Next Case Study', 'on'); ?>

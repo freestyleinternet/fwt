@@ -37,10 +37,10 @@
                         <div class="foot4">
                        		<h2>STANDARDS</h2>
                             <?php while(the_repeater_field('website_standards_footer', 19)): ?>
-                          <article class="sponsor ">
+                          <article class="sponsor">
                             <a href="<?php echo the_sub_field('link_to_a_page'); ?>">
                                 <img class="borderbox" src="<?php echo the_sub_field('logo_file'); ?>" alt="<?php echo the_sub_field('pdescription'); ?>"/>
-                                <div class="vertical-align second"><h1><?php echo the_sub_field('description'); ?></h1></div> 
+                                <div class="vertical-align"><h1><?php echo the_sub_field('description'); ?></h1></div> 
                             </a>
                           </article>
                           <?php  endwhile; ?>

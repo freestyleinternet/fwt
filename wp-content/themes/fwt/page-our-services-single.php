@@ -32,12 +32,15 @@ get_header(); ?>
 							<?php the_content(); ?>
                             <div class="sharethisbar"><?php get_template_part( 'templates/partials/inc-socialbuttons'); ?></div>
                         </div>
+                        <?php if( get_field('files') ): ?>
                         <div class="downloads">
                         	<h1>CASE STUDIES AND DOWNLOADS</h1>
                             <?php while(the_repeater_field('files')): ?>
                                 <a class="download" href="<?php the_sub_field('pdf_download'); ?>"><?php the_sub_field('download_button_name'); ?></a>
                             <?php  endwhile; ?>
 						</div>
+                        <?php endif; ?>
+                        
 						<?php
 							$pagelist = get_pages("child_of=".$post->post_parent."&parent=".$post->post_parent."&sort_column=menu_order&sort_order=asc");
 							$pages = array();

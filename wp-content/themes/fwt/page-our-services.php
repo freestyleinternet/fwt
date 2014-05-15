@@ -32,12 +32,15 @@ get_header(); ?>
 							<?php the_content(); ?>
                             <div class="sharethisbar"><?php get_template_part( 'templates/partials/inc-socialbuttons'); ?></div>
                         </div>
-                        <div class="downloads">
-                        	<h1>CASE STUDIES AND DOWNLOADS</h1>
-                            <?php while(the_repeater_field('files')): ?>
-                                <a class="download" href="<?php the_sub_field('pdf_download'); ?>"><?php the_sub_field('download_button_name'); ?></a>
-                            <?php  endwhile; ?>
-						</div>
+                        
+						<?php if( get_field('files') ): ?>
+                            <div class="downloads">
+                                <h1>CASE STUDIES AND DOWNLOADS</h1>
+                                <?php while(the_repeater_field('files')): ?>
+                                    <a class="download" href="<?php the_sub_field('pdf_download'); ?>"><?php the_sub_field('download_button_name'); ?></a>
+                                <?php  endwhile; ?>
+                            </div>
+                        <?php endif; ?>
                         <a class="yellowimg rightarrow thinner" href="<?php the_field('next_service_to_link_to'); ?>">NEXT SERVICE</a>
                         
                     <?php endwhile; endif; ?>
