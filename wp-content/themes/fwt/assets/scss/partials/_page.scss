@@ -542,7 +542,7 @@ main .homeblock.update {
 	}
 }
 main .homeblock.contactblock {
-	position:relative;
+	/*position:relative;
 	background: url(#{$assetPath}/contact-us-map-block.jpg) no-repeat top left;
 	@media only screen and (min-width: 400px) {
 		background: url(#{$assetPath}/map-large.png) no-repeat -50px 0;	
@@ -555,6 +555,20 @@ main .homeblock.contactblock {
 	}
 	@include bp(desktop) {
 		background: url(#{$assetPath}/contact-us-map-block.jpg) no-repeat top left;
+	}*/
+	position:relative;
+	background: url(#{$assetPath}/we-are-here-sm.png) no-repeat top left;
+	@media only screen and (min-width: 400px) {
+		background: url(#{$assetPath}/we-are-here-med.png) no-repeat -50px 0;	
+	}
+	@include bp(tablet) {
+		background: url(#{$assetPath}/we-are-here-large.png) no-repeat  center left;
+	}
+	@media only screen and (min-width: 800px) {
+		background: url(#{$assetPath}/we-are-here-large.png) no-repeat -60px 0;	
+	}
+	@include bp(desktop) {
+		background: url(#{$assetPath}/we-are-here-sm.png) no-repeat top left;
 	}
 	h2, p {
 		color:$brand-second;
