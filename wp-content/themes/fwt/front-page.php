@@ -35,7 +35,7 @@
               <div class="wrapper">
                   
                   <div class="col homeblock">
-                        <a href="#">
+                        <a href="<?php bloginfo('url'); ?>/our-services/">
                             <img class="absolute" src="<?php the_field('our_services_featured_image'); ?>">
                             <h2>OUR SERVICES</h2>
                             <p><?php the_field('our_services_introduction_text'); ?></p>
